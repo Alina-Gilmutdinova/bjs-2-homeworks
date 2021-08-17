@@ -17,7 +17,7 @@ const compareArrays = (a, b) => a.length === b.length && a.every((n, i) => n ===
 
 //Задание 2
 function advancedFilter(arr) {
-  let resultArr = arr.filter((item) => (item > 3)).filter(item => (item % 3 === 0)).map(item => item * 10)
+  let resultArr = arr.filter((item) => (item > 0)).filter(item => (item % 3 === 0)).map(item => item * 10)
   
   return resultArr; // array
 }
