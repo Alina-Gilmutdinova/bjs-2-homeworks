@@ -4,33 +4,37 @@ function Student(name, gender, age) {
     this.gender = gender;
     this.age = age;
 }
-const student1 = new Student();
-const student2 = new Student();
 
 Student.prototype.setSubject = function (subjectName) {
-  this.subjectName = subjectName;
+  this.subject = subjectName;
     //ваш код
 }
 
 // ваш код для остальных методов
-Student.prototype.addMark = function (mark) {
-  this.mark = mark {
-    if(this.marks === undefined){ 
-      mark.push (5)// добавить первую оценку 
+Student.prototype.addMark = function (mark) {   
+    if(this.marks === undefined) { // проверяем, получал ли наш студент оценки ранее
+      this.marks = [];// добавить первую оценку // если нет, создаём новый массив для их хранения
       } else {
-        this.addMark.push(4);
-        this.addMark.push(3);
-        this.addMark.push(2);
-        this.addMark.push(1);// добавить вторую и последующие оценки в массив
-  }  
-    }
+        this.marks.push(mark); //добавить вторую и последующие оценки в массив
+  };
+    };
 }
 
-Student.prototype.addMarks = function (mark1, mark2, mark3,...) {
- addMarks.push(mark1, mark2, mark3, ...); //ваш код
+Student.prototype.addMarks = function (...mark) {
+  if(this.marks === undefined) {
+    this.marks = [];
+    this.marks.push(...mark);
+  } else {
+  this.marks.push(...mark);
+  };
 }
 
-Student.prototype.getAverage = function (avg) {
-  let sum = 
-  return avg = sum / mark.length;
+Student.prototype.getAverage = function () {
+  return this.marks.reduce((acc, item) => acc += item) / this.marks.length;
+};
+
+Student.prototype.exclude = function (reason) {
+delete this.subject;
+delete this.marks;
+this.exclude = reason;
 }
